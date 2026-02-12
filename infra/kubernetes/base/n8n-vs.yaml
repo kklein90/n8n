@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+    name: n8n-vs
+spec:
+    hosts:
+        - "n8n.kwkc.xyz"
+    gateways:
+        - istio-system/observability-gateway
+    http:
+        - match:
+              - uri:
+                    prefix: /
+          route:
+              - destination:
+                    port:
+                        number: 81
+                    host: n8n-svc

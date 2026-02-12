@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: n8n-svc
+    labels:
+        app.kubernetes.io/name: n8n
+        app: n8n
+        service: n8n-svc
+spec:
+    ports:
+        - name: http
+          targetPort: 5678
+          port: 81
+    selector:
+        app: n8n
+---
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        service: postgres-n8n
+        app: postgres
+    name: postgres-service
+    namespace: default
+spec:
+    clusterIP: None
+    ports:
+        - name: "5432"
+          port: 5432
+          targetPort: 5432
+          protocol: TCP
+    selector:
+        service: n8n

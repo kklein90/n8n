@@ -1,0 +1,5 @@
+home.tfvars
+terraform.tfvars
+.terraform/
+*.tfstate
+licensekey
