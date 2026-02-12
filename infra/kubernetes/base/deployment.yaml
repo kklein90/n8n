@@ -39,6 +39,13 @@ spec:
                         value: "false"
                       - name: N8N_LICENSE_ACTIVATION_KEY
                         value: "e47d4809-ae36-4932-8685-8a9826563818"
+                      - name: N8N_MIGRATE_FS_STORAGE_PATH
+                        value: "true"
+                      - name: N8N_RUNNERS_AUTH_TOKEN
+                        valueFrom:
+                            secretKeyRef:
+                                name: n8n-env
+                                key: N8N_RUNNERS_AUTH_TOKEN
                   resources:
                       limits:
                           memory: "1024Mi"
@@ -49,6 +56,25 @@ spec:
                   volumeMounts:
                       - mountPath: /home/node/.n8n
                         name: n8n-nfs-mount
+                  ports:
+                      - containerPort: 80
+                - name: task-runners
+                  image: docker.n8n.io/n8nio/runners:latest
+                  env:
+                      - name: N8N_RUNNERS_TASK_BROKER_URI
+                        value: http://n8n:5679
+                      - name: N8N_RUNNERS_AUTH_TOKEN
+                        valueFrom:
+                            secretKeyRef:
+                                name: n8n-env
+                                key: N8N_RUNNERS_AUTH_TOKEN
+                  resources:
+                      limits:
+                          memory: "1024Mi"
+                          cpu: "500m"
+                      requests:
+                          memory: "512Mi"
+                          cpu: "256m"
                   ports:
                       - containerPort: 80
                 - name: postgres
