@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
     name: n8n
 spec:
+    replicas: 1
+    revisionHistoryLimit: 2
     selector:
         matchLabels:
             app: n8n
