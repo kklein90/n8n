@@ -5,6 +5,7 @@ metadata:
 spec:
     hosts:
         - "n8n.kwkc.xyz"
+        - "automation.kwkc.xyz"
     gateways:
         - istio-system/observability-gateway
     http:
