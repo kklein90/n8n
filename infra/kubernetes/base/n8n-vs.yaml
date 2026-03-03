@@ -11,14 +11,6 @@ spec:
     http:
         - match:
               - uri:
-                    prefix: /
-          route:
-              - destination:
-                    port:
-                        number: 81
-                    host: n8n-svc
-        - match:
-              - uri:
                     prefix: /tos.html
           route:
               - destination:
@@ -33,6 +25,14 @@ spec:
                     port:
                         number: 80
                     host: n8n-svc-nginx
+        - match:
+              - uri:
+                    prefix: /
+          route:
+              - destination:
+                    port:
+                        number: 81
+                    host: n8n-svc
 
 # ---
 # apiVersion: networking.istio.io/v1
