@@ -17,6 +17,23 @@ spec:
                     port:
                         number: 81
                     host: n8n-svc
+        - match:
+              - url:
+                    prefix: /tos.html
+          route:
+              - destination:
+                    port:
+                        number: 80
+                    host: n8n-svc-nginx
+        - match:
+              - url:
+                    prefix: /privacy.html
+          route:
+              - destination:
+                    port:
+                        number: 80
+                    host: n8n-svc-nginx
+
 # ---
 # apiVersion: networking.istio.io/v1
 # kind: VirtualService

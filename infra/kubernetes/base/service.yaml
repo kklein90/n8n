@@ -31,3 +31,21 @@ spec:
           protocol: TCP
     selector:
         service: n8n
+---
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        service: n8n-svc-nginx
+        app: nginx
+    name: n8n-svc-nginx
+    namespace: default
+spec:
+    clusterIP: None
+    ports:
+        - name: "http"
+          port: 80
+          targetPort: 80
+          protocol: TCP
+    selector:
+        service: n8n
