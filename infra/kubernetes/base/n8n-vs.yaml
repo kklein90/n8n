@@ -16,3 +16,22 @@ spec:
                     port:
                         number: 81
                     host: n8n-svc
+# ---
+# apiVersion: networking.istio.io/v1
+# kind: VirtualService
+# metadata:
+#     name: n8n-oauth-vs
+# spec:
+#     hosts:
+#         - "automation.kwkc.xyz"
+#     gateways:
+#         - istio-system/observability-gateway
+#     http:
+#         - match:
+#               - uri:
+#                     prefix: /rest/oauth2-credential/callback
+#           route:
+#               - destination:
+#                     port:
+#                         number: 5678
+#                     host: n8n-svc

@@ -36,11 +36,13 @@ spec:
                       - name: TZ
                         value: America/New_York
                       - name: N8N_HOST
-                        value: 0.0.0.0
+                        value: automation.kwkc.xyz
                       - name: N8N_PORT
                         value: "5678"
                       - name: NODES_EXCLUDE
                         value: "[]"
+                      - name: WEBHOOK_URL
+                        value: "https://automation.kwkc.xyz"
                       - name: WEBHOOK_TUNNEL_URL
                         value: "http://n8n.kwkc.xyz:30080"
                       - name: N8N_SECURE_COOKIE

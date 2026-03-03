@@ -16,12 +16,12 @@ terraform {
 }
 
 provider "argocd" {
-#  server_addr = "argo.kwkc.home:80"
-  server_addr = "localhost:8088"
+  server_addr = "argo.kwkc.xyz:443"
+#  server_addr = "localhost:8088"
   username    = "admin"
   password    = var.argocd-pw
-  insecure    = true
-  plain_text  = true
+  insecure    = false
+  #plain_text  = true
 }
 
 variable "argocd-pw" {
