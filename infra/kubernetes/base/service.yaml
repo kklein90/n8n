@@ -30,7 +30,7 @@ spec:
           targetPort: 5432
           protocol: TCP
     selector:
-        service: n8n
+        app: n8n
 ---
 apiVersion: v1
 kind: Service
@@ -41,11 +41,11 @@ metadata:
     name: n8n-svc-nginx
     namespace: default
 spec:
-    clusterIP: None
+    type: ClusterIP
     ports:
         - name: "http"
           port: 80
           targetPort: 80
           protocol: TCP
     selector:
-        service: n8n
+        app: n8n

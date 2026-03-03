@@ -75,9 +75,9 @@ spec:
                       - mountPath: /home/node/.n8n
                         name: n8n-nfs-mount
                   ports:
-                      - containerPort: 80
-                        name: http
-                        protocol: TCP
+                      # - containerPort: 80
+                      #   name: http
+                      #   protocol: TCP
                       - containerPort: 5678
                         name: n8n
                         protocol: TCP
