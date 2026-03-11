@@ -64,8 +64,6 @@ spec:
                                 key: N8N_ENCRYPTION_KEY
                       - name: N8N_MIGRATE_FS_STORAGE_PATH
                         value: "true"
-                      # - name: N8N_RUNNERS_ENABLED  # deprecated
-                      #   value: "true"
                       - name: N8N_RUNNERS_MODE
                         value: "external"
                       - name: N8N_RUNNERS_BROKER_LISTEN_ADDRESS
@@ -80,10 +78,10 @@ spec:
                   resources:
                       limits:
                           memory: "1024Mi"
-                          cpu: "500m"
+                          cpu: "1000m"
                       requests:
                           memory: "512Mi"
-                          cpu: "256m"
+                          cpu: "500m"
                   volumeMounts:
                       - mountPath: /home/node/.n8n
                         name: n8n-nfs-mount
