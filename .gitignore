@@ -1,0 +1,6 @@
+home.tfvars
+terraform.tfvars
+.terraform/
+*.tfstate
+licensekey
+n8n.env
