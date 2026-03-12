@@ -101,7 +101,7 @@ spec:
                   image: n8nio/runners:latest
                   env:
                       - name: N8N_RUNNERS_TASK_BROKER_URI
-                        value: http://127.0.0.1:5679
+                        value: http://n8n:5679
                       - name: N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT
                         value: "15"
                       - name: N8N_RUNNERS_AUTH_TOKEN
