@@ -116,30 +116,30 @@ spec:
                       requests:
                           memory: "512Mi"
                           cpu: "256m"
-                - name: postgres
-                  image: postgres:15
-                  env:
-                      - name: POSTGRES_DB
-                        value: n8n
-                      - name: POSTGRES_USER
-                        value: n8n
-                      - name: POSTGRES_PASSWORD
-                        valueFrom:
-                            secretKeyRef:
-                                name: n8n-env
-                                key: DB_POSTGRESDB_PASSWORD
-                  ports:
-                      - containerPort: 5432
-                  resources:
-                      limits:
-                          cpu: 512m
-                          memory: 256Mi
-                      requests:
-                          cpu: 256m
-                          memory: 128Mi
-                  volumeMounts:
-                      - mountPath: /var/lib/postgresql/data
-                        name: pgsql-nfs-mount
+                # - name: postgres
+                #   image: postgres:15
+                #   env:
+                #       - name: POSTGRES_DB
+                #         value: n8n
+                #       - name: POSTGRES_USER
+                #         value: n8n
+                #       - name: POSTGRES_PASSWORD
+                #         valueFrom:
+                #             secretKeyRef:
+                #                 name: n8n-env
+                #                 key: DB_POSTGRESDB_PASSWORD
+                #   ports:
+                #       - containerPort: 5432
+                #   resources:
+                #       limits:
+                #           cpu: 512m
+                #           memory: 256Mi
+                #       requests:
+                #           cpu: 256m
+                #           memory: 128Mi
+                #   volumeMounts:
+                #       - mountPath: /var/lib/postgresql/data
+                #         name: pgsql-nfs-mount
                 - name: nginx
                   image: kklein90/n8n-nginx:latest
                   ports:
