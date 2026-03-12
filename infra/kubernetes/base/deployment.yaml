@@ -42,6 +42,8 @@ spec:
                         value: automation.kwkc.xyz
                       - name: N8N_PORT
                         value: "5678"
+                      - name: N8N_PROXY_HOPS # trying to fix x-forwarded-for errors
+                        value: "1"
                       - name: NODES_EXCLUDE
                         value: "[]"
                       - name: WEBHOOK_URL
