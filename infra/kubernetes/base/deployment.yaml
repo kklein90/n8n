@@ -116,6 +116,7 @@ spec:
                       requests:
                           memory: "512Mi"
                           cpu: "256m"
+                #### moved the database to the common postgresql instance in psql namespace
                 # - name: postgres
                 #   image: postgres:15
                 #   env:
